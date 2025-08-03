@@ -1,8 +1,6 @@
-[
-  {
-    "scriptName": "",
-    "scenarioName": "singleRun",
-    "thresholds": "standard",
-    "data": ""
+{
+  "baseURL": "https://test-api.k6.io",
+  "headers": {
+    "Content-Type": "application/json"
   }
-]
+}
