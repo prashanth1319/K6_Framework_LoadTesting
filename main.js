@@ -1,6 +1,11 @@
 import { scenarioMap } from './options/scenarios.js';
 import { thresholds } from './options/thresholds.js';
+
+// Import all testing scripts
 import { firstTest } from './scripts/firstTest.js';
+
+// Pick the test to execute here (just change one line)
+const selectedTest = firstTest; // Change to ant other test as needed
 
 // Get scenario name from environment variable or fallback to singleRun
 const selectedScenario = __ENV.SCENARIO || 'singleRun';
@@ -9,6 +14,7 @@ if (!scenarioMap[selectedScenario]) {
   throw new Error(`Scenario "${selectedScenario}" not found! Available: ${Object.keys(scenarioMap).join(', ')}`);
 }
 
+// k6 Options (scenario + thresholds)
 export const options = {
   scenarios: {
     [selectedScenario]: scenarioMap[selectedScenario],
@@ -16,7 +22,8 @@ export const options = {
   thresholds,
 };
 
-export default firstTest;
+// Export the selected test
+export default selectedTest;
 
 /*
 
