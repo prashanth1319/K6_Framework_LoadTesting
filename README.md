@@ -10,11 +10,8 @@ This is a **complete, reusable, and team-friendly k6 load testing framework** wi
 
 It is designed to help **QA enginseers, SDETs, and performance engineers** quickly write, execute, and maintain **API load tests**.
 
----
-
 ## 1. Framework Structure
 
-```
 k6_final_framework/
 ├── main.js                     # Entry point to execute k6 test
 │
@@ -33,9 +30,7 @@ k6_final_framework/
 │
 ├── generate_report.sh           # Steps to generate JSON & HTML reports
 └── README.md                    # This documentation
-```
 
----
 
 ## 2. Key Features
 
@@ -61,8 +56,6 @@ k6_final_framework/
 - Clean, minimal, and extensible structure
 - Any team member can add new APIs or scenarios easily
 
----
-
 ## 3. Scenarios Supported
 
 We support **multiple pre-defined scenarios** in `options/scenarios.js`:
@@ -76,7 +69,6 @@ We support **multiple pre-defined scenarios** in `options/scenarios.js`:
 
 **Example selection at runtime:**
 
-```bash
 # Default (singleRun)
 k6 run main.js
 
@@ -85,9 +77,7 @@ k6 run main.js -e SCENARIO=spikeTest
 
 # Stress test
 k6 run main.js -e SCENARIO=stressTest
-```
 
----
 
 ## 4. How the Framework Works
 
@@ -104,27 +94,20 @@ k6 run main.js -e SCENARIO=stressTest
 6. **Generate Reports**  
    - Save output to JSON → Convert to HTML via `k6-html-reporter`
 
----
 
 ## 5. Execution & Reporting
 
 ### **Basic Execution**
-```bash
 k6 run main.js
-```
 
 ### **Run Specific Scenario**
-```bash
 k6 run main.js -e SCENARIO=spikeTest
-```
 
 ### **Save JSON Results**
-```bash
 k6 run main.js --out json=results.json
-```
 
 ### **Generate HTML Report**
-```bash
+
 # Install Node.js and k6-html-reporter if not installed
 npm install -g k6-html-reporter
 
@@ -132,10 +115,8 @@ npm install -g k6-html-reporter
 k6-html-reporter results.json report.html
 
 # Open report.html in browser
-```
 
----
-
+=================================================================================
 ## 6. CI/CD Integration
 
 **GitHub Actions Example** (`.github/workflows/k6-loadtest.yml`)
@@ -173,8 +154,7 @@ jobs:
 - Uses thresholds to fail pipelines on SLA breaches
 - Artifacts (JSON/HTML reports) stored for review
 
----
-
+=======================================================================
 ## 7. How to Extend Framework
 
 1. **Add New Test Script**
@@ -193,7 +173,6 @@ jobs:
    - Add InfluxDB/Grafana for real-time dashboards
 
 ## 8. Benefits
-
 - Easy for **Testers** to run basic tests
 - Flexible for **SDET/performance engineers** to extend
 - Minimal setup → Ready in minutes
